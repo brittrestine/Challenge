@@ -7,7 +7,16 @@ class CreateContacts < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :birthdate
       t.boolean :favorite
+      t.string :street
+      t.string :city
+      t.string :state
+      t.string :country
+      t.string :zipcode
+      t.string :work
+      t.string :home
+      t.string :mobile
 
       t.timestamps
+    end
   end
 end
