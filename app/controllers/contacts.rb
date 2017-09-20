@@ -10,17 +10,18 @@ get '/contact/:id' do
   erb :contact
 end
 
-put '/contact/:id' do
+put '/contact/favorite/:id' do
   @contact = Contact.find_by(id: params[:id])
   @contact.update_attributes(favorite: true)
   @contact.save
 
   redirect "/contact/#{@contact.id}"
+end
 
-   if @article.save
-    redirect "article/#{@article.id}"
-  else
-    @errors = @entry.errors.full_messages
-    erb :'article/edit'
-  end
+put '/contact/unfavorite/:id' do
+  @contact = Contact.find_by(id: params[:id])
+  @contact.update_attributes(favorite: false)
+  @contact.save
+
+  redirect "/contact/#{@contact.id}"
 end
