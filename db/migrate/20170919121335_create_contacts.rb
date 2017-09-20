@@ -4,8 +4,9 @@ class CreateContacts < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.string :company
       t.string :small_image
-      t.string :email
-      t.string :birthdate
+      t.string :large_image
+      t.string :email, null: false
+      t.string :birthdate, null: false
       t.boolean :favorite
       t.string :street
       t.string :city

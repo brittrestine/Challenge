@@ -2,11 +2,8 @@ get '/contact/:id' do
   number = params[:id]
 
   contact_info.each do |contact|
-    if contact['id'] == number
-      @contact = contact
-    end
+    @contact = contact if contact['id'] == number
   end
 
-  # @contacts = contact_info
   erb :contact
 end
