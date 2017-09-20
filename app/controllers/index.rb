@@ -1,4 +1,5 @@
 get '/' do
-  @contacts = contact_info
+  @favorite_contacts = Contact.where(favorite: true)
+
   erb :index
 end
