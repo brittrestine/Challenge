@@ -2,11 +2,12 @@
   <div class="header-profile-page">
     <h1><a href="/"> < Contacts</a><h1>
     <% if @other_contact %>
-      <form action="/action_page.php">
-        <input type="hidden" name="country" value="Norway">
-        <input type="submit" value="Submit">
+
+      <form method="post" action="/contact/<%= @contact.id %>">
+        <input type="hidden" name="_method" value="put">
+        <input type="image" value=<img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page" alt="star">
       </form>
-      <img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page" alt="star">
+
     <% end %>
     <% if @favorite_contact %>
       <img src="/images/Favorite-Star/Favorite-true3.png" class="star-profile-page" alt="star">
