@@ -1,8 +1,10 @@
 get '/contact/:id' do
-  number = params[:id]
+  @contact = Contact.find_by(id: params[:id])
 
-  contact_info.each do |contact|
-    @contact = contact if contact['id'] == number
+  if @contact[:favorite]
+    @favorite_contact = @contact
+  else
+    @other_contact = @contact
   end
 
   erb :contact

@@ -1,8 +1,46 @@
 <div class="container">
-  <div class="contact-page-contact">
-    <h1><a href="/">Contacts</a><h1>
-    <% if @contact['isFavorite'] == false %>
-    <img src="/images/Favorite-Star(False)/Favorite-False.png" alt="star">
+  <div class="header-profile-page">
+    <h1><a href="/"> < Contacts</a><h1>
+    <% if @other_contact %>
+      <img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page" alt="star">
     <% end %>
+    <% if @favorite_contact %>
+      <img src="/images/Favorite-Star/Favorite-true3.png" class="star-profile-page" alt="star">
+    <% end %>
+  </div>
+  <div class="profile-img-name-company">
+    <img src=<%= @contact[:large_image] %> alt="Contact Image">
+    <h2><%= @contact[:name] %></h2>
+    <p><%= @contact[:company] %></p>
+  </div>
+  <div class="phone">
+    <h3>Phone:</h3>
+    <h3 class="phone-type"> Home </h3>
+      <%= @contact[:home_phone] %>
+  </div>
+  <div class="phone">
+    <% if @contact.mobile_phone? %>
+    <h3>Phone:</h3>
+    <h3 class="phone-type"> Mobile </h3>
+      <%= @contact[:mobile_phone] %>
+    <% end %>
+  </div>
+  <div class="phone">
+    <h3>Phone:</h3>
+    <h3 class="phone-type"> Work </h3>
+      <%= @contact[:work_phone] %>
+  </div>
+  <div class="profile-address">
+    <h3>Address:</h3>
+    <p><%= @contact[:street_address] %></p>
+    <p><%= @contact[:city] %>, <%= @contact[:state_address] %><%= @contact[:zipcode] %>, <%= @contact[:country] %></p>
+  </div >
+  <div class="profile-birthday">
+    <h3>Birthday:</h3>
+    <p><%= @contact[:birthdate] %></p>
+  </div>
+  <div class="profile-email">
+    <h3>Email:</h3>
+    <p><%= @contact[:email] %></p>
   </div>
 </div>
