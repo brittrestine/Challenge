@@ -9,3 +9,5 @@ get '/contact/:id' do
 
   erb :contact
 end
+
+put '/'

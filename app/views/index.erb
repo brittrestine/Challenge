@@ -5,14 +5,14 @@
         <div class="contact">
           <div class="contact-small-photo">
             <!-- < % if contact.no_small_image? % > -->
-              <img src=<%= contact[:small_image] %> alt="Contact Image">
+              <img src=<%= contact.small_image %> alt="Contact Image">
             <!-- < % else % > -->
              <!--  <img src=/images/User-Small/User-Icon-Small.png alt="No Contact Image"> -->
             <!-- < % end % > -->
             <div class="contact-info">
               <p><img src="/images/Favorite-Star/Favorite-true1.png" alt="star">
-              <a href="/contact/<%= contact[:id] %>"><%= contact[:name] %></a></p>
-              <p><%= contact[:company] %></p>
+              <a href="/contact/<%= contact.id %>"><%= contact.name %></a></p>
+              <p><%= contact.company %></p>
             </div>
           </div>
         </div>
@@ -22,13 +22,13 @@
           <div class="contact">
             <div class="contact-small-photo">
               <!-- < % if contact.no_small_image? % > -->
-                <img src=<%= contact[:small_image] %> alt="Contact Image">
+                <img src=<%= contact.small_image %> alt="Contact Image">
               <!-- < % else % > -->
                 <!--  <img src=/images/User-Small/User-Icon-Small.png alt="No Contact Image"> -->
               <!-- < % end % > -->
               <div class="contact-info">
-                <p><a href="/contact/<%= contact[:id] %>"><%= contact[:name] %></a></p>
-                <p><%= contact[:company] %></p>
+                <p><a href="/contact/<%= contact.id %>"><%= contact.name %></a></p>
+                <p><%= contact.company %></p>
               </div>
             </div>
           </div>

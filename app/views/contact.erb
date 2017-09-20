@@ -2,6 +2,10 @@
   <div class="header-profile-page">
     <h1><a href="/"> < Contacts</a><h1>
     <% if @other_contact %>
+      <form action="/action_page.php">
+        <input type="hidden" name="country" value="Norway">
+        <input type="submit" value="Submit">
+      </form>
       <img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page" alt="star">
     <% end %>
     <% if @favorite_contact %>
@@ -9,38 +13,52 @@
     <% end %>
   </div>
   <div class="profile-img-name-company">
-    <img src=<%= @contact[:large_image] %> alt="Contact Image">
-    <h2><%= @contact[:name] %></h2>
-    <p><%= @contact[:company] %></p>
+    <% if @contact.large_image? %>
+      <img src=<%= @contact.large_image %> alt="Contact Image">
+    <% else%>
+      <img src=/images/User-Large/User-Large2.png alt="No Contact Image">
+    <% end %>
+    <h2><%= @contact.name %></h2>
+    <p><%= @contact.company %></p>
   </div>
+  <% if @contact.home_phone? %>
   <div class="phone">
     <h3>Phone:</h3>
     <h3 class="phone-type"> Home </h3>
-      <%= @contact[:home_phone] %>
+      <%= @contact.home_phone %>
   </div>
-  <div class="phone">
-    <% if @contact.mobile_phone? %>
-    <h3>Phone:</h3>
-    <h3 class="phone-type"> Mobile </h3>
-      <%= @contact[:mobile_phone] %>
-    <% end %>
-  </div>
+  <% end %>
+  <% if @contact.mobile_phone? %>
+    <div class="phone">
+      <h3>Phone:</h3>
+      <h3 class="phone-type"> Mobile </h3>
+        <%= @contact.mobile_phone %>
+    </div>
+  <% end %>
+  <% if @contact.work_phone? %>
   <div class="phone">
     <h3>Phone:</h3>
     <h3 class="phone-type"> Work </h3>
-      <%= @contact[:work_phone] %>
+      <%= @contact.work_phone %>
   </div>
+  <% end %>
+  <% if @contact.address? %>
   <div class="profile-address">
     <h3>Address:</h3>
-    <p><%= @contact[:street_address] %></p>
-    <p><%= @contact[:city] %>, <%= @contact[:state_address] %><%= @contact[:zipcode] %>, <%= @contact[:country] %></p>
+    <p><%= @contact.street_address %></p>
+    <p><%= @contact.city %>, <%= @contact.state %> <%= @contact.zipcode %>, <%= @contact.country %></p>
   </div >
+  <% end %>
+  <% if @contact.birthday? %>
   <div class="profile-birthday">
     <h3>Birthday:</h3>
-    <p><%= @contact[:birthdate] %></p>
+    <p><%= @contact.birthday_format %></p>
   </div>
+  <% end %>
+  <% if @contact.email? %>
   <div class="profile-email">
     <h3>Email:</h3>
-    <p><%= @contact[:email] %></p>
+    <p><%= @contact.email %></p>
   </div>
+  <% end %>
 </div>
