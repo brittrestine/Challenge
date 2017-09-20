@@ -1,5 +1,4 @@
 .container {
-  border: 1px solid lightgray;
   margin: auto;
   padding: 50px;
   font-family: "Times New Roman", Georgia, Serif;
@@ -9,14 +8,17 @@
   text-align: center;
   font-size: 3em;
   padding: 30px;
-  margin: -8px;
+  margin-top: -50px;
+  margin-right: -50px;
+  margin-left: -50px;
+  margin-bottom: -5px;
   background-color: lightgray;
 }
 
 .fav-other-contacts {
   font-size: 1.7em;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-left: -50px;
+  margin-right: -50px;
   margin-top: 5px;
   margin-bottom: 50px;
   background-color: gray;
@@ -55,7 +57,9 @@
 
 .header-profile-page {
   padding: 30px;
-  margin: -8px;
+  margin-top: -50px;
+  margin-right: -50px;
+  margin-left: -50px;
   background-color: lightgray;
 }
 
