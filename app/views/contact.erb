@@ -15,7 +15,7 @@
     <% end %>
   </div>
   <div class="profile-img-name-company">
-    <% if @contact.large_image? %>
+    <% if @contact.large_image.present? %>
       <img src=<%= @contact.large_image %> alt="Contact Image">
     <% else%>
       <img src=/images/User-Large/User-Large2.png alt="No Contact Image">
@@ -23,41 +23,42 @@
     <h2><%= @contact.name %></h2>
     <p><%= @contact.company %></p>
   </div>
-  <% if @contact.home_phone? %>
+  <% if @contact.home_phone.present?
+ %>
   <div class="phone">
     <h3>Phone:</h3>
     <h3 class="phone-type"> Home </h3>
       <%= @contact.home_phone %>
   </div>
   <% end %>
-  <% if @contact.mobile_phone? %>
+  <% if @contact.mobile_phone.present? %>
     <div class="phone">
       <h3>Phone:</h3>
       <h3 class="phone-type"> Mobile </h3>
         <%= @contact.mobile_phone %>
     </div>
   <% end %>
-  <% if @contact.work_phone? %>
+  <% if @contact.work_phone.present? %>
   <div class="phone">
     <h3>Phone:</h3>
     <h3 class="phone-type"> Work </h3>
       <%= @contact.work_phone %>
   </div>
   <% end %>
-  <% if @contact.address? %>
+  <% if @contact.street_address.present? %>
   <div class="profile-address">
     <h3>Address:</h3>
     <p><%= @contact.street_address %></p>
     <p><%= @contact.city %>, <%= @contact.state %> <%= @contact.zipcode %>, <%= @contact.country %></p>
   </div >
   <% end %>
-  <% if @contact.birthday? %>
+  <% if @contact.birthdate.present? %>
   <div class="profile-birthday">
     <h3>Birthday:</h3>
     <p><%= @contact.birthday_format %></p>
   </div>
   <% end %>
-  <% if @contact.email? %>
+  <% if @contact.email.present? %>
   <div class="profile-email">
     <h3>Email:</h3>
     <p><%= @contact.email %></p>
