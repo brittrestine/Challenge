@@ -18,7 +18,7 @@ contact_info.each do |contact|
     favorite: contact['isFavorite'],
     work_phone: contact["phone"]["work"],
     home_phone: contact["phone"]["home"],
-    mobile_phone: contact["phone"]["moble"],
+    mobile_phone: contact["phone"]["mobile"],
     street_address: contact["address"]["street"],
     state: contact["address"]["state"],
     city: contact["address"]["city"],

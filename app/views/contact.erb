@@ -28,21 +28,21 @@
   <div class="phone">
     <h3>Phone:</h3>
     <h3 class="phone-type"> Home </h3>
-      <%= @contact.home_phone %>
+      <%= @contact.phone_format(@contact.home_phone) %>
   </div>
   <% end %>
   <% if @contact.mobile_phone.present? %>
     <div class="phone">
       <h3>Phone:</h3>
       <h3 class="phone-type"> Mobile </h3>
-        <%= @contact.mobile_phone %>
+        <%=  @contact.phone_format(@contact.mobile_phone) %>
     </div>
   <% end %>
   <% if @contact.work_phone.present? %>
   <div class="phone">
     <h3>Phone:</h3>
     <h3 class="phone-type"> Work </h3>
-      <%= @contact.work_phone %>
+      <%=  @contact.phone_format(@contact.work_phone) %>
   </div>
   <% end %>
   <% if @contact.street_address.present? %>
