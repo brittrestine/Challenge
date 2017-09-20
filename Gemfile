@@ -17,3 +17,10 @@ gem 'rake', '~> 12.0.0'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
+
+group :test do
+  gem "rspec"
+  gem "rack-test"
+  gem "database_cleaner"
+  gem "capybara"
+end
