@@ -1,18 +1,14 @@
 <div class="container">
   <div class="header-profile-page">
     <h1><a href="/"> < Contacts</a><h1>
-    <% if @other_contact %>
-      <form method="post" action="/contact/favorite/<%= @contact.id %>">
-        <input type="hidden" name="_method" value="put">
-        <input type="image" value=<img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page" alt="star">
-      </form>
-    <% end %>
-    <% if @favorite_contact %>
-      <form method="post" action="/contact/unfavorite/<%= @contact.id %>">
-        <input type="hidden" name="_method" value="put">
-        <input type="image" value=<img src="/images/Favorite-Star/Favorite-true3.png" class="star-profile-page" alt="star">
-      </form>
-    <% end %>
+    <form method="post" action="/contact/favorite/<%= @contact.id %>" class="form-for-favorite">
+      <input type="hidden" name="_method" value="put">
+      <% if @contact.favorite %>
+        <input type="image" value=<img src="/images/Favorite-Star/Favorite-true3.png" class="star-profile-page-fav"  alt="star">
+      <% else %>
+        <input type="image" value=<img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page-notfav" alt="star">
+      <% end %>
+    </form>
   </div>
   <div class="profile-img-name-company">
     <% if @contact.large_image.present? %>
