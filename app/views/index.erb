@@ -1,5 +1,46 @@
-<% @contacts.each do |c| %>
-  <%= c["largeImageURL"]%>
+<div class="home-page">
+  <h1 class="title-contact">Contacts</h1>
 
-<% end %>
-<%= @contacts[0]["phone"]["work"] %>
+    <h2 class="fav-other-contacts">FAVORITE CONTACTS</h2>
+
+      <% @contacts.each do |contact| %>
+        <% if contact["isFavorite"] %>
+          <div class="contact">
+            <div class="contact-small-photo">
+              <img src=<%= contact['smallImageURL'] %> alt="Mountain View">
+              <%= contact['isFavorite'] %>
+            </div>
+            <div class="contact-info">
+              <h3><a href="/contact/<%= contact['id'] %>"><%= contact['name'] %></a></h3>
+              <% if !(contact['companyName'] == '') || !(contact['companyName'] == nil)%>
+                <p><%= contact['companyName'] %></p>
+              <% end %>
+            </div>
+            <br>
+            <br>
+          </div>
+        <% end %>
+      <% end %>
+
+    <h2 class="fav-other-contacts">OTHER CONTACTS</h2>
+
+      <% @contacts.each do |contact| %>
+        <% if contact["isFavorite"] == false %>
+          <div class="contact">
+            <div class="contact-small-photo">
+            <!-- Winnie the poo only has a large image even though it is labeled as small -->
+              <img src=<%= contact['smallImageURL'] %> alt="Mountain View">
+              <%= contact['isFavorite'] %>
+            </div>
+            <div class="contact-info">
+              <h3><%= contact['name'] %></h3>
+              <% if !(contact['companyName'] == '') || !(contact['companyName'] == nil)%>
+                <p><%= contact['companyName'] %></p>
+              <% end %>
+            </div>
+            <br>
+            <br>
+          </div>
+        <% end %>
+      <% end %>
+</div>
