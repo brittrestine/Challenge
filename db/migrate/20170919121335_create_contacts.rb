@@ -10,7 +10,7 @@ class CreateContacts < ActiveRecord::Migration[5.0]
       t.boolean :favorite
       t.string :street_address
       t.string :city
-      t.string :state_address
+      t.string :state
       t.string :country
       t.string :zipcode
       t.string :work_phone

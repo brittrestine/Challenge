@@ -1,11 +1,41 @@
 class Contact < ApplicationRecord
-  attr_reader :name, :company, :small_image, :large_image, :email, :birthdate, :favorite, :street, :city, :state_address, :country, :zipcode, :work_phone, :home_phone, :mobile_phone
-
   validates :email, {uniqueness: true}
 
-  def has_small_image
-    if self.small_image == "" || self.small_image == nil
+  def small_image?
+    return true if small_image.present?
+  end
 
+  def large_image?
+    return true if large_image.present?
+  end
+
+  def home_phone?
+    return true if home_phone.present?
+  end
+
+  def mobile_phone?
+    return true if mobile_phone.present?
+  end
+
+   def work_phone?
+    return true if work_phone.present?
+  end
+
+  def address?
+    return true if street_address.present?
+  end
+
+  def birthday?
+    return true if birthdate.present?
+  end
+
+  def birthday_format
+    date = DateTime.parse(birthdate)
+    date.strftime("%B %d, %Y")
+  end
+
+  def email?
+    return true if email.present?
   end
 
 end

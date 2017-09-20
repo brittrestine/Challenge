@@ -1,25 +1,36 @@
 <div class="container">
   <h1 class="home-contact">Contacts</h1>
-
     <h2 class="fav-other-contacts">FAVORITE CONTACTS</h2>
-<!-- need to refactor this code... not dry make a helper method. also style a little more -->
       <%  @favorite_contacts.each do |contact| %>
+        <div class="contact">
+          <div class="contact-small-photo">
+            <!-- < % if contact.no_small_image? % > -->
+              <img src=<%= contact.small_image %> alt="Contact Image">
+            <!-- < % else % > -->
+             <!--  <img src=/images/User-Small/User-Icon-Small.png alt="No Contact Image"> -->
+            <!-- < % end % > -->
+            <div class="contact-info">
+              <p><img src="/images/Favorite-Star/Favorite-true1.png" alt="star">
+              <a href="/contact/<%= contact.id %>"><%= contact.name %></a></p>
+              <p><%= contact.company %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <h2 class="fav-other-contacts">OTHER CONTACTS</h2>
+        <% @other_contacts.each do |contact| %>
           <div class="contact">
             <div class="contact-small-photo">
-              <!-- <img src=< %= contact['smallImageURL'] % > alt="no contact"> -->
-             <!--  < %= contact['isFavorite'] %> -->
+              <!-- < % if contact.no_small_image? % > -->
+                <img src=<%= contact.small_image %> alt="Contact Image">
+              <!-- < % else % > -->
+                <!--  <img src=/images/User-Small/User-Icon-Small.png alt="No Contact Image"> -->
+              <!-- < % end % > -->
+              <div class="contact-info">
+                <p><a href="/contact/<%= contact.id %>"><%= contact.name %></a></p>
+                <p><%= contact.company %></p>
+              </div>
             </div>
-           <!--  <div class="contact-info">
-              <img src="/images/Favorite-Star/Favorite-true1.png" alt="star">
-              <h3><a href="/contact/<%= contact['id'] %>">< %= contact['name'] % ></a></h3>
-              < % if !(contact['companyName'] == '') || !(contact['companyName'] == nil)% >
-                <p>< %= contact['companyName'] % ></p>
-              < % end % >
-            </div> -->
-            <br>
-            <br>
           </div>
-      <% end %>
-
-
+        <% end %>
 </div>

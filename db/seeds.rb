@@ -20,6 +20,7 @@ contact_info.each do |contact|
     home_phone: contact["phone"]["home"],
     mobile_phone: contact["phone"]["moble"],
     street_address: contact["address"]["street"],
+    state: contact["address"]["state"],
     city: contact["address"]["city"],
     country: contact["address"]["country"],
     zipcode: contact["address"]["zipCode"]
