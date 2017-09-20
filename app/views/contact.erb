@@ -2,15 +2,16 @@
   <div class="header-profile-page">
     <h1><a href="/"> < Contacts</a><h1>
     <% if @other_contact %>
-
-      <form method="post" action="/contact/<%= @contact.id %>">
+      <form method="post" action="/contact/favorite/<%= @contact.id %>">
         <input type="hidden" name="_method" value="put">
         <input type="image" value=<img src="/images/Favorite-Star(False)/Favorite-False.png" class="star-profile-page" alt="star">
       </form>
-
     <% end %>
     <% if @favorite_contact %>
-      <img src="/images/Favorite-Star/Favorite-true3.png" class="star-profile-page" alt="star">
+      <form method="post" action="/contact/unfavorite/<%= @contact.id %>">
+        <input type="hidden" name="_method" value="put">
+        <input type="image" value=<img src="/images/Favorite-Star/Favorite-true3.png" class="star-profile-page" alt="star">
+      </form>
     <% end %>
   </div>
   <div class="profile-img-name-company">
