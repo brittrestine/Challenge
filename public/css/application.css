@@ -51,7 +51,6 @@
 
 .star-profile-page-fav, .star-profile-page-notfav {
   float: right;
-  margin-top: -80px;
 }
 
 .header-profile-page {
@@ -75,4 +74,9 @@
   border-bottom: 1px solid lightgray;
   padding-bottom: 30px;
   padding-top: 20px;
+}
+
+.form-for-favorite {
+  float: right;
+  margin-top: -80px;
 }

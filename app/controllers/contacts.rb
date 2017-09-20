@@ -10,12 +10,12 @@ put '/contact/favorite/:id' do
   if request.xhr?
     if @contact.favorite
       @contact.update_attributes(favorite: false)
+      "false"
     else
       @contact.update_attributes(favorite: true)
+      "true"
     end
   else
     redirect "/contact/#{@contact.id}"
    end
-
-  # redirect "/contact/#{@contact.id}"
 end
