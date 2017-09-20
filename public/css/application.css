@@ -1,0 +1,40 @@
+.container {
+  border: 1px solid lightgray;
+  margin: auto;
+  width: 50%;
+  padding: 9px;
+}
+
+.home-contact {
+  text-align: center;
+  padding: 30px;
+  margin: -8px;
+  background-color: lightgray ;
+}
+
+.fav-other-contacts {
+  font-size: 1em;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  background-color: gray;
+  padding: 10px;
+}
+
+.contact {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.contact-small-photo {
+  width: 15%;
+  height: 200px;
+  float: left;
+ }
+
+.contact-info {
+  margin-left: 50%;
+  height: 200px;
+}

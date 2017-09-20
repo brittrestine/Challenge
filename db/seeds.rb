@@ -16,13 +16,13 @@ contact_info.each do |contact|
     email: contact['emailAddress'],
     birthday: contact['birthdate'],
     favorite: contact['isFavorite'],
-    work_phone: ["phone"]["work"],
-    home_phone: ["phone"]["home"],
-    moble_phone: ["phone"]["moble"],
-    street_address: ["address"]["street"],
-    city: ["address"]["city"],
-    country: ["address"]["country"],
-    zipcode: ["address"]["zipCode"]
+    work_phone: contact["phone"]["work"],
+    home_phone: contact["phone"]["home"],
+    moble_phone: contact["phone"]["moble"],
+    street_address: contact["address"]["street"],
+    city: contact["address"]["city"],
+    country: contact["address"]["country"],
+    zipcode: contact["address"]["zipCode"]
     )
 
 end
