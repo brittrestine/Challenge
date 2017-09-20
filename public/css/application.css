@@ -49,7 +49,7 @@
   margin-top: -100px;
 }
 
-.star-profile-page {
+.star-profile-page-fav, .star-profile-page-notfav {
   float: right;
   margin-top: -80px;
 }
