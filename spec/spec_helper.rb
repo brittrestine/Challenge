@@ -4,8 +4,6 @@ ENV['RACK_ENV'] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rack/test'
-require 'capybara'
-require 'capybara/rspec'
 require 'database_cleaner'
 
 
@@ -24,5 +22,3 @@ end
 def app
   Sinatra::Application
 end
-
-Capybara.app = app.new
